@@ -1,5 +1,13 @@
-// Simple Slider
-
+/*
+ * Simple Slider
+ * by Kristoffer Årdal
+*/
+/*
+// Maybe use a defaults-object in the future
+var defaults = {
+	speed: 300,
+	timeout: 5000
+};*/
 
 function simpleSlider(sliderID, sliderOptions) {
 	var opt = sliderOptions;
@@ -10,12 +18,8 @@ function simpleSlider(sliderID, sliderOptions) {
 	var timer;
 	var autoPlay = false;
 	
-	var defaults = {
-		speed: 300,
-		timeout: 5000
-	};
 	
-	
+	// Take care of options
 	if (opt.nextBtn) {
 		$(opt.nextBtn).click(function(e) {
 			e.preventDefault();
@@ -33,11 +37,11 @@ function simpleSlider(sliderID, sliderOptions) {
 		doTimeout()
 	}
 	if (opt.speed || opt.speed == Number) {
-		//opt.speed = defaults.speed;
 		speed = opt.speed;
 	}
 	if (opt.pager) {
 		for (var i = 0; i < count; i++) {
+			// Make a pager element
 			var a = "<a>" + (i+1) + "</a>";
 			var $a = $(a);
 			
@@ -48,6 +52,7 @@ function simpleSlider(sliderID, sliderOptions) {
             });
 		}
 		
+		// Add styles to pager
 		$(opt.pager).children().addClass("pagerNormal");
 		$(opt.pager).children().first().removeClass("pagerNormal").addClass("pagerSelected");
 	}
@@ -60,7 +65,7 @@ function simpleSlider(sliderID, sliderOptions) {
 	}
 	
 	
-	
+	// Advance back or forward using a positive or negative value
 	function advance(value) {
 		var index = current + value;
 		
@@ -73,6 +78,7 @@ function simpleSlider(sliderID, sliderOptions) {
 		goTo(index)
 	}
 	
+	// Go to the given index
 	function goTo(index) {
 		if (index != current) {
 			clearTimeout(timer);
@@ -97,6 +103,7 @@ function simpleSlider(sliderID, sliderOptions) {
 		}
 	}
 	
+	// Toggle play and stop
 	function toggle() {
 		clearTimeout(timer);
 		autoPlay = !autoPlay;
@@ -104,6 +111,7 @@ function simpleSlider(sliderID, sliderOptions) {
 		toggleText();
 	}
 	
+	// Toggle between the play and stop text
 	function toggleText() {
 		if (opt.playStopBtn && opt.playText && opt.stopText) {
 			if (autoPlay) {
@@ -114,9 +122,4 @@ function simpleSlider(sliderID, sliderOptions) {
 		}
 	}
 }
-
-
-
-
-
 

@@ -1,0 +1,43 @@
+
+#wrapper {
+	margin: 0 auto;
+	width: 600px;
+}
+
+#slider-controls {
+	padding: 6px;
+	background-color: #333;
+	border-radius: 0 0 5px 5px;
+
+	display: block;
+}
+
+.controls a {
+	color: #111;
+	background-color: #CCC;
+	margin: 5px;
+	padding: 2px 10px;
+	border-radius: 4px;
+	text-decoration: none;
+}
+
+.controls a:hover {
+	background-color: #E7E7E7;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+	display: inline-block;
+}
+
+#pager1 {
+	float: right;
+}
+
+#slider2 {
+	margin-top: 50px;
+}
