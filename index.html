@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Simple Slideshow</title>
+<link type="text/css" rel="stylesheet" href="css/simpleslider.css" />
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="slider1" class="slider">
+		<img src="img/img1.jpg" />
+		<img src="img/img2.jpg" />
+		<img src="img/img3.jpg" />
+        <img src="img/img4.jpg" />
+        <img src="img/img5.jpg" />
+	</div>
+    <div id="slider-controls">
+    <span class="controls">
+		<a href="#" id="prev1">Previous</a>
+		<a href="#" id="next1">Next</a>
+        <a href="#" id="toggle1">toggle</a>
+    </span>
+    <span id="pager1" class="pager"></span>
+    </div>
+    <div id="slider2" class="slider">
+		<img src="img/img1.jpg" />
+		<img src="img/img3.jpg" />
+        <img src="img/img4.jpg" />
+	</div>
+</div>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/simpleslider.js"></script>
+<script>
+$(document).ready(function() {
+	simpleSlider("#slider1", {
+		nextBtn: "#next1",
+		prevBtn: "#prev1",
+		pager: "#pager1",
+		timeout: 2000,
+		playStopBtn: "#toggle1",
+		playText: "Play",
+		stopText: "Stop"
+	});
+	
+	simpleSlider("#slider2", {
+		speed: 500,
+		timeout: 8000
+	});
+});
+</script>
+</body>
+</html>
