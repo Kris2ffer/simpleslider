@@ -11,8 +11,9 @@ It supports multiple slideshows on a page. Wow.
 * simpleslider.js
 * simpleslider.css
 
-Simple Slider is currently using default styles from the simpleslider.css file
-You initialize your slider by calling the simpleSlider function and passing the ID of your slider and a list of options
+Simple Slider is currently using default styles from the simpleslider.css file. You can edit these styles if you want to. 
+You initialize your slider by calling the simpleSlider() function and passing the ID of your slider and a list of options. 
+See below or example.html for an example.
 
 ```html
 <script>
