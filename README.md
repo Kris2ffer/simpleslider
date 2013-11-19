@@ -21,14 +21,14 @@ $(document).ready(function() {
 
 simpleSlider("#sliderID", // ID of slider
 {
-	nextBtn: 	"#nextBtnID",		// ID of next button
-	prevBtn: 	"#prevBtnID",		// ID of previous button
-	playStopBtn: 	"#playStopBtnID",	// ID of toggle button used to toggle autoplay
+	nextBtn: 	"#nextBtnID",	// ID of next button
+	prevBtn: 	"#prevBtnID",	// ID of previous button
+	playStopBtn:"#playStopBtnID", // ID of toggle button used to toggle autoplay
 	playText: 	"Play",			// Text to show on toggle button when stopped or autoplay is off
 	stopText: 	"Stop",			// Text to show on toggle button while playing or autoplay is on
 	pager: 		"#pagerID",		// ID of pager element
-	pagerClassNormal:   "pagerNormal",	// The name of the class/style to be used on the pager
-	pagerClassSelected: "pagerSelected",	// The class/style to be used on selected pager element
+	pagerClassNormal:   "pagerNormal",	 // The name of the class/style to be used on the pager
+	pagerClassSelected: "pagerSelected", // The class/style to be used on selected pager element
 	speed: 		300,			// The speed of the transition
 	timeout: 	2000			// The timeout between transitions if you want autoplay
 });
