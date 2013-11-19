@@ -17,6 +17,8 @@ function simpleSlider(sliderID, sliderOptions) {
 	var speed = 300;
 	var timer;
 	var autoPlay = false;
+	var pagerClassNormal = "pagerNormal";
+	var pagerClassSelected = "pagerSelected";
 	
 	
 	// Take care of options
@@ -52,9 +54,17 @@ function simpleSlider(sliderID, sliderOptions) {
             });
 		}
 		
+		// Use the given style given, or use the default
+		if (opt.pagerClassNormal) {
+			pagerClassNormal = opt.pagerClassNormal;
+		}
+		if (opt.pagerClassSelected) {
+			pagerClassSelected = opt.pagerClassSelected;
+		}
+		
 		// Add styles to pager
-		$(opt.pager).children().addClass("pagerNormal");
-		$(opt.pager).children().first().removeClass("pagerNormal").addClass("pagerSelected");
+		$(opt.pager).children().addClass(pagerClassNormal);
+		$(opt.pager).children().first().removeClass(pagerClassNormal).addClass(pagerClassSelected);
 	}
 	if (opt.playStopBtn) {
 		$(opt.playStopBtn).click(function(e) {
@@ -91,8 +101,8 @@ function simpleSlider(sliderID, sliderOptions) {
 			});
 			
 			if (opt.pager) {
-				$($(opt.pager + " a").get(current)).addClass("pagerSelected").removeClass("pagerNormal");
-				$($(opt.pager + " a").get(prev)).addClass("pagerNormal").removeClass("pagerSelected");
+				$($(opt.pager + " a").get(current)).addClass(pagerClassSelected).removeClass(pagerClassNormal);
+				$($(opt.pager + " a").get(prev)).addClass(pagerClassNormal).removeClass(pagerClassSelected);
 			}
 		}
 	}
