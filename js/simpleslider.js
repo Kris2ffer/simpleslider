@@ -48,13 +48,13 @@ function simpleSlider(sliderID, sliderOptions) {
 			var $a = $(a);
 			
 			$(opt.pager).append($a);
-			$($a).click(function(e) {
+			$a.click(function(e) {
                 e.preventDefault();
 				goTo($(opt.pager + " a").index(this));
             });
 		}
 		
-		// Use the given style given, or use the default
+		// Use the given style, or use the default
 		if (opt.pagerClassNormal) {
 			pagerClassNormal = opt.pagerClassNormal;
 		}
